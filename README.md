@@ -8,7 +8,7 @@
 tonyvx/tonyvx is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
-# Create a Ubuntu webapp with Icon 
+### Create a Ubuntu webapp with Icon 
 
 * 👨‍💻 Type terminal sudo -H gedit /usr/share/applications/whatsapp-webapp.desktop
 * 📋 Copy following text to opened screen
