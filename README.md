@@ -30,3 +30,142 @@ Keywords=WhatsApp;webapp;
 X-Ubuntu-Gettext-Domain=WhatsApp
 StartupWMClass=web.whatsapp.com
 ```
+
+### `@reduxjs/toolkit`
+
+<table>
+<tr>
+<th>
+Redux Boilerplate
+</th>
+<th>
+  
+```@reduxjs/toolkit```
+
+</th>
+</tr>
+
+<tr>
+
+<td>
+<pre>
+
+```js
+
+import React, { useReducer } from "react";
+
+const LOGIN_START = "LOGIN_START";
+const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+
+function loginStart(payload) {
+  return {
+    type: LOGIN_START,
+    payload
+  };
+}
+function loginSuccess(payload) {
+  return {
+    type: LOGIN_SUCCESS,
+    payload
+  };
+}
+
+const authState = {
+  isRequestingToken: "",
+  username: "",
+  token: "",
+  error: ""
+};
+
+function authReducer(state, action) {
+  switch (action.type) {
+    case LOGIN_START:
+      return {
+        ...state,
+        isRequestingToken: "yes",
+        username: action.payload.username
+      };
+    case LOGIN_SUCCESS:
+      return { 
+        ...state, 
+        isRequestingToken: "no", 
+        token: action.payload.token };
+    default:
+      return state;
+  }
+}
+
+export function SillyThings() {
+  const [state, dispatch] = useReducer(authReducer, authState);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const username = formData.get("username");
+
+    dispatch(loginStart({ username }));
+
+    // omit for brevity
+
+  }
+    
+    // omit for brevity
+
+}
+```
+
+</pre>
+</td>
+
+<td>
+<pre>
+
+```js
+import React, { useReducer } from "react";
+import { createAction, createReducer } from "@reduxjs/toolkit";
+
+const loginStart = createAction("loginStart");
+const loginSuccess = createAction("loginSuccess");
+
+const authState = {
+  isRequestingToken: "",
+  username: "",
+  token: "",
+  error: ""
+};
+
+const authReducer = createReducer(authState, {
+  [loginStart]: (state, action) => {
+    state.isRequestingToken = "yes";
+    state.username = action.payload.username;
+  },
+  [loginSuccess]: (state, action) => {
+    state.isRequestingToken = "no";
+    state.token = action.payload.token;
+  }
+});
+
+export function SillyThings() {
+  const [state, dispatch] = useReducer(authReducer, authState);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const username = formData.get("username");
+
+    dispatch(loginStart({ username }));
+
+    // omit for brevity
+
+  }
+    
+    // omit for brevity
+
+}
+```
+
+</pre>
+</td>
+
+</tr>
+</table>
