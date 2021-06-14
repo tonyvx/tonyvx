@@ -31,6 +31,32 @@ X-Ubuntu-Gettext-Domain=WhatsApp
 StartupWMClass=web.whatsapp.com
 ```
 
+### ubuntu cheatsheet
+```sh
+# list all disks including unmounted
+sudo fdisk -l
+
+# mount usb disk
+#fat32
+sudo mount -t vfat /dev/sdb1 /media/external
+
+# HFs+ (apple)
+sudo apt-get install hfsprogs
+sudo mount -t hfsplus -o force,rw /dev/sdXY /media/mntpoint
+sudo fsck.hfsplus -f /dev/sdXY
+
+# unmount
+umount /media/mntpoint
+
+# kernel version
+uname -r
+
+# ubuntu version
+lsb_release -a
+
+```
+
+
 ### `@reduxjs/toolkit`
 
 <table>
