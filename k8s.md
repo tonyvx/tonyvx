@@ -1,9 +1,9 @@
 
 # K8s Local Setup - Ubuntu 21.10
 
-## Installation
+## 1. Installation
 
-### docker
+### 1.1. docker
 _Refer [how-to-install-and-use-docker-on-ubuntu-20-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)_
 
 ```sh
@@ -65,7 +65,7 @@ Nov 02 10:08:05 tony-XPS-13-9370 dockerd[2548]: time="2021-11-02T10:08:05.65649>
 
 ```
 
-#### Executing the Docker Command Without Sudo (Optional)
+#### 1.1.1. Executing the Docker Command Without Sudo (Optional)
 ```sh
 ## If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
 sudo usermod -aG docker ${USER}
@@ -85,7 +85,7 @@ sudo usermod -aG docker username
  
 ```
 
-### minikube
+### 1.2. minikube
 _Refer_
 * _[minikube.sigs.k8s.io](https://minikube.sigs.k8s.io/docs/start/)_
 * _[minikube docker](https://minikube.sigs.k8s.io/docs/drivers/docker/)_
@@ -101,7 +101,7 @@ minikube start --driver=docker
 
 ```
 
-### kubectl
+### 1.3. kubectl
 
 _Refer [install-kubectl-linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)_
 
@@ -122,3 +122,25 @@ kubectl: OK
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 ```
+
+## 2. minikube start
+minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
+
+All you need is Docker (or similarly compatible) container or a Virtual Machine environment, and Kubernetes is a single command away: 
+
+```sh
+○ → minikube start --driver docker
+😄  minikube v1.23.2 on Ubuntu 21.10
+✨  Using the docker driver based on existing profile
+👍  Starting control plane node minikube in cluster minikube
+🚜  Pulling base image ...
+🔄  Restarting existing docker container for "minikube" ...
+🐳  Preparing Kubernetes v1.22.2 on Docker 20.10.8 ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+
+```
+
+
