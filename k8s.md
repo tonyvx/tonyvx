@@ -1,9 +1,16 @@
 
 # K8s Local Setup - Ubuntu 21.10
 
-## 1. Installation
+1. [Installation](#1-installation)
+   1. [docker](#i-docker)
+      1. [Executing the Docker Command Without Sudo (Optional)](#a-executing-the-docker-command-without-sudo-optional)
+   1. [minikube](#ii-minikube)
+   1. [kubectl](#iii-kubectl)
+1. [minikube start](#2-minikube-start)
 
-### 1.1. docker
+## 1) Installation
+
+### i) docker
 _Refer [how-to-install-and-use-docker-on-ubuntu-20-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)_
 
 ```sh
@@ -65,7 +72,7 @@ Nov 02 10:08:05 tony-XPS-13-9370 dockerd[2548]: time="2021-11-02T10:08:05.65649>
 
 ```
 
-#### 1.1.1. Executing the Docker Command Without Sudo (Optional)
+#### a) Executing the Docker Command Without Sudo (Optional)
 ```sh
 ## If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
 sudo usermod -aG docker ${USER}
@@ -85,7 +92,7 @@ sudo usermod -aG docker username
  
 ```
 
-### 1.2. minikube
+### ii) minikube
 _Refer_
 * _[minikube.sigs.k8s.io](https://minikube.sigs.k8s.io/docs/start/)_
 * _[minikube docker](https://minikube.sigs.k8s.io/docs/drivers/docker/)_
@@ -101,7 +108,7 @@ minikube start --driver=docker
 
 ```
 
-### 1.3. kubectl
+### iii) kubectl
 
 _Refer [install-kubectl-linux](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)_
 
@@ -123,7 +130,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 ```
 
-## 2. minikube start
+## 2) minikube start
 minikube is local Kubernetes, focusing on making it easy to learn and develop for Kubernetes.
 
 All you need is Docker (or similarly compatible) container or a Virtual Machine environment, and Kubernetes is a single command away: 
