@@ -1,5 +1,6 @@
 
 # K8s Local Setup - Ubuntu 21.10
+![miniKube Architecture](images/k8s/k8sClusterVSminiKube.png)
 
 #### Table of Contents
 1. [Installation](#1-installation)
