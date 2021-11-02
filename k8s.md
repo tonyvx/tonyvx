@@ -1,14 +1,17 @@
 
-# K8s Local Setup - Ubuntu 21.10
-![miniKube Architecture](images/k8s/k8sClusterVSminiKube.png)
-
 #### Table of Contents
+[K8s Local Setup - Ubuntu 21.10](#k8s-local-setup---ubuntu-2110)
 1. [Installation](#1-installation)
    1. [docker](#i-docker)
       1. [Executing the Docker Command Without Sudo (Optional)](#a-executing-the-docker-command-without-sudo-optional)
    1. [minikube](#ii-minikube)
    1. [kubectl](#iii-kubectl)
 1. [minikube start](#2-minikube-start)
+
+[k8s Architecture](#k8s-architecture)
+
+# K8s Local Setup - Ubuntu 21.10
+![miniKube Architecture](images/k8s/k8sClusterVSminiKube.png)
 
 ## 1) Installation 
 [Back to top](#table-of-contents)
@@ -173,4 +176,9 @@ All you need is Docker (or similarly compatible) container or a Virtual Machine 
 
 ```
 
+# K8s Architecture
+
+_Refer [understanding-the-kubernetes-node](https://www.suse.com/c/rancher_blog/understanding-the-kubernetes-node/)_
+
+![k8s-node-components-architecture](images/k8s/k8s-node-components-architecture.png)
 
