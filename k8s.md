@@ -17,25 +17,34 @@
 
 _Refer [how-to-install-and-use-docker-on-ubuntu-20-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)_
 
+First, update your existing list of packages: 
 ```sh
-## First, update your existing list of packages:
 sudo apt update
- 
-## Next, install a few prerequisite packages which let apt use packages over HTTPS:
-sudo apt install apt-transport-https ca-certificates curl software-properties-common
- 
-## Then add the GPG key for the official Docker repository to your system:
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
- 
-## Add the Docker repository to APT sources:
-sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
- 
-## This will also update our package database with the Docker packages from the newly added repo.
+``` 
 
-## Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
-apt-cache policy docker-ce
+Next, install a few prerequisite packages which let apt use packages over HTTPS:
+```sh
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
  
-## You’ll see output like this, although the version number for Docker may be different:
+Then add the GPG key for the official Docker repository to your system:
+```sh
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+
+Add the Docker repository to APT sources:
+```sh
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+```
+ 
+This will also update our package database with the Docker packages from the newly added repo.
+Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:
+```sh
+apt-cache policy docker-ce
+```
+
+You’ll see output like this, although the version number for Docker may be different:
+```
 ## Output of apt-cache policy docker-ce
 docker-ce:
   Installed: 5:20.10.10~3-0~ubuntu-focal
@@ -48,17 +57,21 @@ docker-ce:
         500 https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
      5:20.10.8~3-0~ubuntu-focal 500
         500 https://download.docker.com/linux/ubuntu focal/stable amd64 Packages
-   
- 
-## Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 20.04 (focal).
+```
+Notice that docker-ce is not installed, but the candidate for installation is from the Docker repository for Ubuntu 21.10.
 
-## Finally, install Docker:
+Finally, install Docker:
+```sh
 sudo apt install docker-ce
+```
  
-## Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+```sh
 sudo systemctl status docker
+```
  
-## The output should be similar to the following, showing that the service is active and running:
+The output should be similar to the following, showing that the service is active and running:
+```
 ## Output
 ● docker.service - Docker Application Container Engine
      Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset>
@@ -73,7 +86,6 @@ TriggeredBy: ● docker.socket
              └─2548 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/cont>
 
 Nov 02 10:08:05 tony-XPS-13-9370 dockerd[2548]: time="2021-11-02T10:08:05.65649>
-
 ```
 
 #### a) Executing the Docker Command Without Sudo (Optional)
