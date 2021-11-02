@@ -1,4 +1,4 @@
-
+[Kubernetes Crash Course for Absolute Beginners](https://www.youtube.com/watch?v=s_o8dwzRlu4)
 #### Table of Contents
 [K8s Local Setup - Ubuntu 21.10](#k8s-local-setup---ubuntu-2110)
 1. [Installation](#1-installation)
