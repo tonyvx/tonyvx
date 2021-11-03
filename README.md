@@ -3,12 +3,20 @@
 - 🌱 I’m currently learning Desktop app development using electronjs
 - 💞️ I’m looking to collaborate on reactjs, express-node, electron, python projects
 - 📫 How to reach me ...
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/bukotsunikki.svg?style=social&label=Follow%20%40tonyvx)](https://twitter.com/tony_v007)
+
+### Index
+1. [Create a Ubuntu webapp with Icon](#create-a-ubuntu-webapp-with-icon)
+2. [ubuntu cheatsheet](#ubuntu-cheatsheet)
+3. [JSS Cheat sheet - Pseudo and Nested Selectors](#jss-cheat-sheet---pseudo-and-nested-selectors)
+4. [`@reduxjs/toolkit`](#reduxjstoolkit)
 
 <!---
 tonyvx/tonyvx is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
 ### Create a Ubuntu webapp with Icon 
+[Back to top](#index)
 
 * 👨‍💻 Type terminal sudo -H gedit /usr/share/applications/whatsapp-webapp.desktop
 * 📋 Copy following text to opened screen
@@ -32,6 +40,8 @@ StartupWMClass=web.whatsapp.com
 ```
 
 ### ubuntu cheatsheet
+[Back to top](#index)
+
 ```sh
 # list all disks including unmounted
 sudo fdisk -l
@@ -56,7 +66,16 @@ lsb_release -a
 
 ```
 
+### express node app generator
+[Back to top](#index)
+
+_Refer [Express application generator](https://expressjs.com/en/starter/generator.html)_
+```sh
+npx express-generator
+```
+
 ### JSS Cheat sheet - Pseudo and Nested Selectors
+[Back to top](#index)
 
 ### Use `&` to reference selector of the parent rule
 
@@ -201,7 +220,7 @@ Compiles to:
 }
 ```
 
-## Increase specificity
+### Increase specificity
 
 When extending third party libraries with high secificity selector it's often necessary to also have a high specificity selector.
 
@@ -229,6 +248,7 @@ Compiles to:
 
 
 ### `@reduxjs/toolkit`
+[Back to top](#index)
 
 <table>
 <tr>
