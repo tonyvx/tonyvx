@@ -175,6 +175,30 @@ All you need is Docker (or similarly compatible) container or a Virtual Machine 
 🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
 
 ```
+## 3) minikube ingress
+```sh
+± |main → origin U:4 ?:2 ✗| → minikube addons enable ingress
+    ▪ Using image k8s.gcr.io/ingress-nginx/controller:v1.0.0-beta.3
+    ▪ Using image k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.0
+    ▪ Using image k8s.gcr.io/ingress-nginx/kube-webhook-certgen:v1.0
+🔎  Verifying ingress addon...
+🌟  The 'ingress' addon is enabled
+
+````
+
+### 4) kubectl commands to check ingress
+
+```sh
+
+± |main → origin U:4 ?:2 ✗| → minikube service webapp-service --url
+http://192.168.49.2:31000
+
+± |main → origin U:4 ?:2 ✗| → kubectl get ingress webapp
+NAME     CLASS   HOSTS   ADDRESS        PORTS   AGE
+webapp   nginx   *       192.168.49.2   80      8m22s
+
+```
+
 
 # K8s Architecture
 
